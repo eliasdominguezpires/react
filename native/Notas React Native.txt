@@ -1,0 +1,295 @@
+Que es REAT JS
+
+es una biblioteca para contruir interfaz de web de usuarios
+
+single page application 
+
+no renderiza toda la pantalla, cambia solo la parte que cambio
+
+se basa en componentes, una vez creado se reutiliza cuantas veces queramos 
+en cualquier tipo de aplicacion, el componente en si no es mas que una union
+HTML+CSS+JS,
+
+https://facebook.github.io/react-native/
+https://reactnavigation.org/docs/en/auth-flow.html
+
+https://github.com/juandc
+https://github.com/juandc/PlatziMusic
+
+Entra directamente al curso: https://platzi.com/cursos/react-native/
+
+Aquí el curso de Redux: https://platzi.com/cursos/redux/
+Aquí el curso de Ract.js: https://platzi.com/cursos/react/
+
+Con React Native aprovecharás todos los conocimientos que ya tienes de JavaScript y no hacer una aplicación que corra dentro de un navegador que finja ser una aplicación instalable, sino que va a hacer una aplicación totalmente nativa y al mismo tiempo en el que desarrollamos una aplicación para Android, también nos va a funcionar en IOS y hasta puedes hacerle tus diseños diferentes para Android y para IOS como tú quieres. Pero puedes y todo está al alcance de tus manos.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://facebook.github.io/react-native/docs/image#resizemode
+SafeAreaView - renderiza el contenido en un area segura para que el contenido se vea bien en todos los dispositivos principalmente los que tienen un notch
+
+Estilos para imagenes dentro de RN, se llama resizeMode que sería similar a background-size de css.
+**_resizeMode _**por Default esta en cover, otras opciones son contain, stretch, repeat, center.
+
+El padding en RN funciona un poco diferente ya que se le puede dar un padding general (top, right, bottom, left), pero si se quiere hacer solamente para right & left se tiene que hacer a mano. Para estos casos se agregan 2 opciones para utilizar:
+
+paddingVertical: esto sería lo equivalente a utilizar (_paddingTop _y paddingBottom)
+
+paddingHorizontal: esto sería lo equivalente a utilizar (_paddingRight _y paddingLeft)
+
+Algo que hemos venido usando es el navigation prop, que es la funcion que nos permite navegar. Veamos que otras opciones nos ofrece esta opción.
+
+.navigate(): Sirve para ir a otra pantalla de las rutas definidas.
+.goBack(): Es para movernos hacia atrás en la ruta.
+.addListener(): Para que puedas escuchar eventos dentro de la pantalla a la que estas llegando.
+.isFocused(): Retorna Verdadero o falso si estas o no en una pantalla.
+.state: retorna el key, la ruta, parametros.
+.setParams(): setear parametros.
+.dispatch() documentacion: https://reactnavigation.org/docs/en/stack-actions.html#push
+
+StackActions:
+
+.push() Agrega una pantalla al Stack sin importar si ya estaba el Stack.
+.pop() Va a quitar el ultimo elemento del Stack.
+.popToTop() Va a quitar todos hasta quedar al primer elemento del Stack.
+.replace() Reemplaza los datos de un elemento del Stack.
+.reset() Reemplaza el estado actual con un nuevo estado (todo el Stack).
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Padding **
+
+paddingVertical: value (Top and Bottom)
+paddingHorizontal: value (Right and Left)
+paddingTop: value
+paddingBottom: value
+paddingRigth: value
+paddingLeft: value
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+SafeAreaView en iPhone solo funciona desde iOS 11 en adelante, para teléfonos sin actualizar como un iPhone 5 hay que usar Platform para ajustar el texto debajo del staturBar y un parseInt para convertir la version en número debido a que iOS 10.3.3 no podria ser comparado
+
+import React from'react'
+import {
+	...
+  Platform
+} from'react-native'
+
+functionHeader (props) {
+	return (
+		<SafeAreaViewstyle={styles.statusBar} >
+			<Viewstyle={styles.container} >
+				 ...
+</View>
+		 </SafeAreaView>
+	)
+}
+
+const styles = StyleSheet.create({
+	...
+	container: {
+		...
+		marginTop: parseInt(Platform.Version) <= 11 ? 10 : 0
+	},
+})
+exportdefault Header
+
+
+Listas
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+FlatLists: puede ser utilizada para listas sencillas.
+
+SectionLists: puede ser utilizada para listas más complejas.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+REACT-NAVIGATION
+https://reactnavigation.org/docs/en/stack-navigator.html#navigationoptions-for-screens-inside-of-the-navigator
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Un StackNavigator es como un “array”, donde podemos añadir y quitar elementos (Push y Pop) entre otras cosas.
+
+El método createStackNavigator() recibe:
+
+Configuración de Ruta: Lista de las rutas, cada ruta puede en un objeto con configuraciones especificas.
+Configuración del StackNavigator: Configuración global donde podemos definir como va a funcionar nuestra navegación (cards, modals, configuraciones visuales).
+Párametros para la configuración de Ruta:
+
+screen: Componente.
+path: Deep Linking.
+navigationOptions: Personalización particular de la pantalla (Titulo en el navigator).
+Parámetros para la configuración del StackNavigator:
+
+initialRouteName: Desde que ruta queremos arrancar.
+initialRouteParams: Parametros a la pantalla inicial de la aplicación.
+initialRouteKey: Navegación por keys.
+navigationOptions: Similar a los parámetros de navegación de rutas, pero en este caso son globales.
+paths: configuraciones para Deep Linking.
+
+Stack Navigator Config - Navigation Options
+* title: Titulo en la parte de encima
+* header: Componente personalizado
+* headerTitle: Similar a title
+* headerAllowFontScaling: El font size se escala dependiendo el dispositivo
+* headerBackImage: La imagen para el botón de regresar, por default está una flecha
+* headerBackTitle: Texto que acompaña al botón de regresar
+* headerTruncateBackTitle: Un texto más corto en dado caso que el headerTitle no alcance el espacio
+* headerRight: Componente personalizado orientado a la derecha
+* headerLeft: Componente personalizado orientado a la izquierda
+* headerStyle: Estilos para el header
+* headerForceInset: Mover el header para arriba, abajo, izquierda
+* headerTitleStyle: Estilos al titulo
+* headerTintColor: Color del background del header
+* headerPressColorAndroid: Color del background del header al presionarlo
+* headerTransparent: Por si se necesita que el header sea transparente
+* headerBackground: Por si se necesita una imagen de fondo en el header
+* gesturesEnableb: Por si quieres que los gestos esten activados (por default iOS los tiene Android no)
+* gesturesResponseDistance: Para la sensibilidad al momento de arrastrar a otra pantalla
+* gesturesDirection: Por si se necesita invertir el cambio de dirección al cambiar de pantalla
+
+Parámetros de las configuraciones visuales de StackNavigator:
+
+mode:
+modal al cambiar de pantalla esta entra de abajo hacia arriba (por default en android)
+card al cambiar de pantalla esta entra desde el costado(por default en iOS)
+headerMode:
+none, sin un header.
+screenel header se mueve (default android).
+float el header se queda fijo (default iOS).
+headerTransitionPreset: animación en el header.
+fade-in-place (alfa de 0 a 1).
+uikit (el header se mueve y también cambia el alfa de 0 a 1).
+cardStyle: Estilos para el componente que envuelve nuestra screen (backgroundColor, borders, etc).
+
+En cualquier componente que sea una pantalla, recibimos un método estático navigationOptions donde vamos a retornar las opciones que podemos configurar.
+
+static navigationOptions = ({ navigation }) => {
+    return {
+        title: navigation.getParam('name')
+    }
+}
+Con el método navigate() ademas de “movemos” hacia otra pantalla, también le podemos enviarle parámetros como segundo parámetro:
+
+handlePress = () => {
+    this.props.navigation.navigate('Profile', {
+        name: 'Ivan Robles'
+    });
+}
+Podemos obtener parámetros con el método de navigation getParam(), el cual recibe 2 cosas, el parámetro que queremos obtener y un valor por defecto para ese parámetro en caso de no encontrarlo:
+
+navigation.getParam('age', 30);
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+LOADER
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+import Loader from "./src/loader/components/loader";
+
+<Home>
+<Header />
+<Text>buscador</Text>
+<Text>categorias</Text>
+{this.state.loading ? (
+  <Loader />
+) : (
+	<SuggestionList list={this.state.suggestionList} />
+  )}
+</Home>
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+VIDEO
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://platzi.com/clases/1292-react-native/11698-controlando-el-buffer-del-video/
+https://github.com/jjyepez/platziVideosApp/tree/master/src
+https://github.com/ernestognw/video-app-react-native/tree/master/src/player
+https://github.com/ernestognw/video-app-react-native/tree/master/src
+https://github.com/rojasleon/react-native-platzi-video/tree/13-video-player-complete
+https://github.com/jalcantara90/Video-App-React
+https://github.com/react-native-community/react-native-video
+https://github.com/abbasfreestyle/react-native-af-video-player
+
+import Video from 'react-native-af-video-player'
+
+<Video 
+	url={{uri:'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'}} 
+/>
+
+
+
+
+
+import React, { Component } from 'react';
+import {
+  Text,
+  View,
+} from 'react-native';
+
+import Home from './src/screens/containers/home';
+import Header from './src/sections/components/header';
+import SuggestionList from './src/videos/containers/suggestion-list';
+import Loader from "./src/loader/components/loader";
+import API from './utils/api';
+import CategoryList from './src/videos/containers/category-list';
+import Player from './src/player/containers/player';
+
+import { Provider } from 'react-redux';
+import store from './src/store'
+
+type Props = {};
+export default class App extends Component<Props> {
+  state = {
+    //suggestionList: [],
+    //categoryList: [],
+    loading: true
+  }
+  async componentDidMount() {
+
+    const suggestionList = await API.getSuggestion(10);
+    //console.log(movies);
+
+    const categoryList = await API.getMovies();
+    //console.log(categories);
+    /*
+    this.setState({
+      suggestionList: movies,
+      categoryList: categories,
+      loading: false,
+    })
+    */
+    store.dispatch({
+      type: 'SET_CAREGORY_LIST',
+      payload: {
+        categoryList
+      }
+    })
+
+    store.dispatch({
+      type: 'SET_SUGGESTION_LIST',
+      payload: {
+        suggestionList
+      }
+    })
+  }
+  render() {
+    return (
+      <Provider
+        store={store}
+      >
+        <Home>
+          <Header />
+          <Player />
+          <Text>buscador</Text>
+          {this.state.loading ? (
+            <Loader />
+          ) : (
+              <CategoryList />
+            )}
+          {this.state.loading ? (
+            <Loader />
+          ) : (
+              <SuggestionList />
+            )}
+        </Home>
+      </Provider>
+    );
+  }
+}
