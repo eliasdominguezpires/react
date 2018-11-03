@@ -1,3 +1,7 @@
+Ejecutar en un dispositivo
+react-native run-android 
+react-native run-ios
+
 Que es REAT JS
 
 es una biblioteca para contruir interfaz de web de usuarios
@@ -15,11 +19,14 @@ https://reactnavigation.org/docs/en/auth-flow.html
 
 https://github.com/juandc
 https://github.com/juandc/PlatziMusic
+https://github.com/LeonidasEsteban?utf8=%E2%9C%93&tab=repositories&q=platzi&type=&language=
 
 Entra directamente al curso: https://platzi.com/cursos/react-native/
 
 Aquí el curso de Redux: https://platzi.com/cursos/redux/
 Aquí el curso de Ract.js: https://platzi.com/cursos/react/
+
+https://github.com/halilb/react-native-textinput-effects
 
 Con React Native aprovecharás todos los conocimientos que ya tienes de JavaScript y no hacer una aplicación que corra dentro de un navegador que finja ser una aplicación instalable, sino que va a hacer una aplicación totalmente nativa y al mismo tiempo en el que desarrollamos una aplicación para Android, también nos va a funcionar en IOS y hasta puedes hacerle tus diseños diferentes para Android y para IOS como tú quieres. Pero puedes y todo está al alcance de tus manos.
 
@@ -54,6 +61,28 @@ StackActions:
 .replace() Reemplaza los datos de un elemento del Stack.
 .reset() Reemplaza el estado actual con un nuevo estado (todo el Stack).
 
+Navigation Actions
+
+.navigate() - Navegar a otra ruta
+.back() - Volver a un estado previo
+.setParams() - Establecer parámetros para la ruta dada
+.init() - Se usa para inicializar el primer estado si el estado no está definido
+
+Configurando React Navigation con Redux
+
+app-navigator.js: Tener un solo archivo con el componente que crea el navigator.
+Installar react-navigation-redux-helpers: Middlewares y utilidades para integrar react navigation a un proyecto con redux.
+navigation.js:
+createNavigationReducer helper pasando por parametro el componente de navegación (app-navigator)
+Combinar reducers
+store.js:
+Traer el reducer principal
+Usar createReactNavigationReduxMiddleware para que nuestro store pueda escuchar las acciones de react navigation
+app-navigator-with-state.js
+Conectar el componente a redux
+Utilizar createReduxBoundAddListener, createDidUpdateCallBack y initiaizeListeners
+Personalizar el componente de app-navigator
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Padding **
 
@@ -64,6 +93,46 @@ paddingBottom: value
 paddingRigth: value
 paddingLeft: value
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+TAB
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+createTabNavigator 		= DEPRECATE
+
+createBottomTabNavigator(routeConfig 'CONFIGURAR LAS RURAS'
+, bottomTabNavigatorConfig 'CONFIGURARLO VISUALMENTE')
+
+* Configuración del bottomTabNavigatorConfig
+
+tabBarComponent					
+tabBarPosition - top | bottom	si quiero que este en la parte superior o inferior 
+swipeEnabled					Habilitar los gestos, de navagacion
+animationsEnabled				a parte de habilitar los gestos, si hay o no animaciones
+lazy							si quiero que todas mis ventanas carguen al mismo tiempo
+removeClippedSubviews			para aumentar el rendimiento
+initialLayout					para ver como funcionan la disposicion de los otros elementos
+tabBarOptions					opciones visuales para el tab bar
+
+activeTintColor					el color de fondo del tab
+activeBackgroundColor			el color de fondo
+tinColor						color del texto
+inactiveTintColor				los tab que no estan activos, como configurar, el texto
+inactiveBackgroundColor			color de fondo cuando no esta activo
+showLabel						si se va a mostrar los textos
+style							agregar estilos
+labelStyle						estilo del texto
+allowFontScaling				
+
+* navigationOptions en Tab Navigator
+
+Title							personalizar titulo
+tabBarIcon						para ponerle icono personalizado
+tabBarColor						color de los tabs
+tabBarLavel						cambiar color el texto
+tabBarAccessibilityLabel		para dar una referencia de accecibilidad
+tabBarTestID					id que se le da para poder cliquear automatizado
+tabBarOnPress					para poder percibir todas las preciones que ocurren en los tab
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 SafeAreaView en iPhone solo funciona desde iOS 11 en adelante, para teléfonos sin actualizar como un iPhone 5 hay que usar Platform para ajustar el texto debajo del staturBar y un parseInt para convertir la version en número debido a que iOS 10.3.3 no podria ser comparado
 
@@ -194,6 +263,13 @@ import Loader from "./src/loader/components/loader";
   )}
 </Home>
 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+MULTILENGUAJE
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://www.npmjs.com/package/react-intl-v2
+
+https://github.com/AlexanderZaytsev/react-native-i18n
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 VIDEO
