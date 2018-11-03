@@ -6,9 +6,10 @@ import {
   initializeListeners,
   createDidUpdateCallback,
 } from 'react-navigation-redux-helpers';
-import { BackHandler }from 'react-native';
-
-import { NavigationActions } from 'react-navigation'
+import {
+  BackHandler
+} from 'react-native';
+import { NavigationActions } from 'react-navigation';
 
 const addListener = createReduxBoundAddListener('root');
 const didUpdate = createDidUpdateCallback('root');
@@ -19,18 +20,19 @@ class AppNavigatorWithState extends Component {
   }
   componentDidMount() {
     initializeListeners('root', this.props.navigation);
-    BackHandler.addEventListener('hardwareBackPress', this.onBackPress)
+    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
   }
-  componentWillUnmount(){
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress)
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
-  onBackPress () {
+  onBackPress = () => {
+    // cuando le piques al back de android
     this.props.dispatch(
       NavigationActions.back({
         key: null
       })
     )
-    return true;
+    return true
   }
   render() {
     const navigation = {

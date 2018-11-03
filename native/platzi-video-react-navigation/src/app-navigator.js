@@ -25,6 +25,7 @@ const Main = createStackNavigator(
   {
     navigationOptions: {
       header: Header,
+      gesturesEnabled: true,
     },
     cardStyle: {
       backgroundColor: 'white'

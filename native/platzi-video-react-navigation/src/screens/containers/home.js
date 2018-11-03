@@ -56,4 +56,5 @@ class Home extends Component {
   }
 }
 
+
 export default connect(null)(Home);

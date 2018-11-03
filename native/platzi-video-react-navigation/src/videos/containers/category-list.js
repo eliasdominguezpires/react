@@ -17,35 +17,32 @@ function mapStateToProps(state) {
 }
 
 class CategoryList extends Component {
-  
   keyExtractor = item => item.id.toString()
   renderEmtpy = () => <Empty text="No hay sugerencias :(" />
   itemSeparator = () => <Separator />
-  
   viewCategory = (item) => {
     this.props.dispatch(
       NavigationActions.navigate({
         routeName: 'Category',
-        params:{
+        params: {
           genre: item.genres[0]
         }
       })
     )
   }
-
-  renderItem = ({ item }) => {
+  renderItem = ({item}) => {
     return (
-      <Category {...item}
+      <Category
+        {...item}
         onPress={() => { this.viewCategory(item) }}
       />
     )
   }
-
   render() {
     return (
       <Layout
         title="Categorias"
-      >
+        >
         <FlatList
           horizontal
           keyExtractor={this.keyExtractor}
