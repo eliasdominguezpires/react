@@ -1,0 +1,282 @@
+https://designrevision.com/best-free-react-admin-templates/
+
+redux 3.7.2
+
+ejecutar proyecto
+npm run build:dev
+
+
+https://github.com/facebook/create-react-app
+https://www.youtube.com/channel/UCtJq04Cs5C3Z_WJxa_gW6JA/videos
+https://github.com/MineiToshio/CursosPlatzi/tree/master/Curso%20de%20Redux
+https://github.com/LeonidasEsteban
+
+https://github.com/booleanhunter/ReactJS-AdminLTE
+https://dashboardpack.com/theme-details/architectui-react-dashboard-free/
+https://dashboardpack.com/live-demo-free/?livedemo=1262
+https://coreui.io/react/#live-preview
+https://github.com/reduxjs/redux
+
+https://coreui.io/react/demo/#/dashboard
+
+https://github.com/sudheerj/reactjs-interview-questions
+
+reactstrap
+https://material-ui.com/
+
+
+https://github.com/sudheerj/reactjs-interview-questions
+https://github.com/ramazanguclu/Create-React-App-Airbnb-Eslint-Integration/tree/master/src
+https://github.com/sudheerj/reactjs-interview-questions
+
+
+Redux: es una librería creada por @dan_abramov, para manipular los datos de una forma separada de la interfaz, similar a lo que hace webpack con la opción hot-reload
+
+Es un contenedor del estado predecible para aplicaciones de JavaScript de front-end complejas.
+
+Store: Es el centro y la verdad de todo, con métodos para actualizar, obtener y escuchar datos.
+Actions: Son bloques de información que envian datos desde la aplicación hacia el store.
+Reducers: Cambian el estado de la aplicación.
+
+Redux es una implementación del patrón de “Observer”. El store de redux es en sí, la forma específica de cómo se lleva a cabo. Un store mantiene el árbol de estado (state tree) de tu aplicación. Si quieres cambiar el estado dentro del store, es necesario que hagas un dispatch sobre él.
+
+1. Única fuente de verdad:
+El estado de toda tu aplicación esta almacenado en un árbol guardado en un único store lo que hace mas fácil el proceso de depuración.
+
+2. Solo Lectura:
+La única forma de modificar el estado es emitiendo una acción, un objeto que describe que ocurrió.
+
+3. Los cambios se realizan con funciones puras:
+Los reduces son funciones puras que toman el estado anterior y una acción, y devuelven un nuevo estado.
+
+Básicamente el ciclo de Redux sería algo como:
+
+Tienes tu vista (UI)
+Tu vista va a enviar una acción
+Tu acción va a llamar un reducer
+Tu reducer va a llamar a tu store
+Tu store va a actualizar el estado
+El estado va a actualizar tu vista (interfaz/UI)
+
+
+Para los que quieren evitar el cambio en dos lugares de los entrypoints, les sugiero leer sobre Webpack merge. Aquí está mi implementación: 
+webpack merge
+https://github.com/mariomenjr/react-playlists
+
+Pregunta: ¿Cada vez que compile para producción tengo que cambiar en index.html la ruta a mi archivo js? habrá manera de automatizar esto?
+Puedes con webpackHtmlPlugin
+
+https://github.com/zalmoxisus/redux-devtools-extension
+
+https://medium.com/@danilosilvadev/webpack-react-redux-babel-config-in-10-minutes-4ad8c4abc8b2
+
+https://platzi.com/tutoriales/1200-redux/1797-funciones-puras-una-breve-introduccion-a-la-programacion-funcional/
+
+Action = Bloque de información que envía datos a la aplicación.
+
+Datos importantes:
+
+Se envían usando el método dispatch() del store.
+Son la única fuente de información del store.
+Son objetos planos de JavaScript.
+
+{
+  store.dispatch({
+    type: 'ADD_SONG',
+    payload: 'Despacito' // Optional
+})``
+
+payload : encomienda
+
+
+Reducer = Modifica el estado.
+
+Datos importantes:
+
+Es una función pura.
+Puede haber más de un reducer en una aplicación pero solo debe haber un store.
+Devuelve el siguiente estado.
+¿Qué es una función pura?
+
+“Dados los mismos parámetros/argumentos/entradas deben retornar el mismo resultado, sin importar el número de veces que se llame”
+
+que no hacer con los REDUCER _?
+
+Modificar sus Argumentos
+Realizar Tareas con efectos secundarios como llamados a APIs
+Llamar a funciones no puras como Date.now Math.random()
+
+Que no hacer dentro de un reducer
+que es funcion pura?
+dadas las mismas condiciones parametros/argumentos/entradas deben retornar el mismo resultado, sin importar el numero de veces que se llame
+las funcion no debe de tener efectos secundarios
+
+
+Reducer
+
+Modifican nuestro estado
+Puede haber múltiples reducers en la aplicación y un solo store.
+Devuelve el siguiente estado.
+Que no deben hacer
+
+Modificar los argumentos recibidos
+Llamar a APIs (u otras tareas secundarias)
+Llamar a funciones no puras como Date.now(), Math.random()
+<h1>Funciones puras</h1>
+Es un concepto de programación funcional, hace que el código sea más legible. Tienen las siguientes condiciones:
+Dados los mismos datos de entrada, deben retornar el mismo resultado sin importar el número de veces que se llame.
+No debe tener objetos secundarios.
+El reducer se iguala a una función, esta función recibe dos parámetros que son el state y la action y en la función se debe definir que se hace con state y action; generalmente se valida con un switch.
+
+
+github.com/reactjs/react-redux
+
+Vamos a la terminal y ponemos el siguiente comando:
+
+npm install --save react-redux
+
+Una vez que termine el proceso verás en el archivo package.json la dependencia instalada.
+
+Por último corre el proyecto utilizando el siguiente comando:
+
+
+PROGRAMACION FUNCIONAL ???
+FUNCION CURRIFICADA 
+
+
+Conectaremos datos en específico dentro de nuestros componentes.
+Primero obtendremos exclusivamente los datos que utiliza el componente.
+
+Utilizaremos lo siguiente:
+connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options]
+
+[mapStateToProps(state, [ownProps]): stateProps] Es una función en la que si el argumento está especificado el nuevo componente se suscribe para recibir actualizaciones, lo que significa que cada vez que el store es actualizado la función mapStateToProps será llamada para obtener las propiedades.
+
+
+Para este tipo de querys de lista grandesy busquedas recomiendo esta libreria https://www.npmjs.com/package/linqjs la cual se usa como linq en .net es muy facil y nos facilita mucho el codigo.
+
+----------------------------------------------------------------------------------------
+Normalizar DATOS
+----------------------------------------------------------------------------------------
+Normilizr permite normalizar la información que se recibe desde la base de datos o desde una api.
+La normalización tiene como objetivo evitar la redundancia de datos y haceer que acceder a esos datos sea más fácil.
+
+Documentación de la librería: https://github.com/paularmstrong/normalizr
+https://github.com/paularmstrong/normalizr
+
+https://hackernoon.com/using-normalizr-to-organize-data-in-stores-practical-guide-82fa061b60fb
+
+Un complemento genial para Redux y Normalizr es Reselect(Una libreria para crear selectores).
+Les recomiendo este articulo en donde muestra el uso de Redux + Inmutablejs + Normalizr + Reselect:
+http://fullstackdeveloper.info/redux-state-with-immutable-js-normalizr-and-reselect/
+
+
+----------------------------------------------------------------------------------------
+IMMUTABLE JS
+----------------------------------------------------------------------------------------
+Listas remplazan ARRAYS, MAPAS A LOS OBJETOS
+
+https://github.com/gajus/redux-immutable
+https://facebook.github.io/immutable-js/
+https://platzi.com/blog/immutablejs-colecciones/
+
+ImmutableJS es una librería que nos permite manejar diferentes colecciones y agregarles cualidades inmutables.
+Un objeto inmutable es básicamente aquel que luego de ser creado nunca cambia
+
+----------------------------------------------------------------------------------------
+Creadores de Acciones
+----------------------------------------------------------------------------------------
+Son funciones que engloban acciones y retornan el texto de la acción.
+Crear acciones por cada grupo de acciones, por cada reducers o uno general en el caso de no ser muy grande
+
+Recibe el dispatch y el getState como argumentos y retorna una función.
+
+Esta función recibe el método para despachar el siguiente middleware; se espera que retorne una función que recibe action y llame a next(action)
+
+----------------------------------------------------------------------------------------
+Creadores de Acciones
+----------------------------------------------------------------------------------------
+bindAnctionCreators  -- mapDispatchToProps
+existe un shorthand donde no es necesario importar bindAnctionCreators, consiste en que mapDispatchToProps sea un objeto en vez de una funcion y recibe las acciones como propiedades asi podran ser usadas directamente en los props del componente.
+
+connect recibe mas de 1 parametro, recibe 4
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
+
+----------------------------------------------------------------------------------------
+Action Types
+----------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------
+Middlewares
+----------------------------------------------------------------------------------------
+https://github.com/xgrommx/awesome-redux
+
+Interceptando todo lo que sucede y puede modificarlo.
+Es una forma de poder interceptar lo que está sucediendo con (redux) para mejorarlo y/o modificarlo.
+Componentes del Middleware
+Osea, el Middleware vendría a ser una función que recibe el “dispatcher” y el “state”, y cada vez que nueva información transite a través de estos 2 
+
+Los enlaces (install, import):
+https://github.com/xgrommx/awesome-redux
+
+redux-logger		https://github.com/evgenyrodionov/redux-logger
+npm install --save redux-logger
+import logger from ‘redyx-logger’
+
+redux-devtools-extension		https://github.com/zalmoxisus/redux-devtools-extension
+npm install –save-dev redux-devtools-extension
+import { composeWithDevTools } from ‘redux-devtools-extension’
+
+----------------------------------------------------------------------------------------
+DISPATCH 
+----------------------------------------------------------------------------------------
+metodo con el cual enviamos las acciones
+
+----------------------------------------------------------------------------------------
+GET STATE
+----------------------------------------------------------------------------------------
+Metodo del store con el cual optenemos el estado de nuestra aplicaciones
+
+----------------------------------------------------------------------------------------
+Acciones asíncronas		https://github.com/gaearon/redux-thunk
+----------------------------------------------------------------------------------------
+npm install --save redux-thunk
+
+https://adrianalonso.es/formacion/developer-training-1-aprendiendo-redux/
+
+diferenciaría redux thunk con redux saga. 
+
+redux-thunk. Es un middleware que permite maneajr los flujos asíncronos desde dentrod e las funciones.
+https://github.com/gaearon/redux-thunk
+
+
+https://www.react-spinners.com/
+
+GRAPHQL
+
+Curso de react-router
+Curso de next
+Curso de redux-saga
+
+https://katherinaguilera.github.io/redux/
+
+https://leanpub.com/react-redux/read
+ https://platzi.com/agenda/
+ 
+ 
+ 
+Declarativo
+	React te ayuda a crear interfaces de usuario interactivas de forma sencilla. se encargará de actualizar y renderizar, los componentes correctos cuando los datos cambien
+Basado en componentes
+	Crea componentes encapsulados que manejen su propio estado, puedes pasar datos de forma sencilla a través de tu aplicación y mantener el estado fuera del DOM
+
+Aprende una vez, escríbelo donde sea
+	
+Un componente simple
+	 implementan un método llamado render() que recibe datos de entrada y retorna qué mostrar, Puedes acceder a los datos de entrada que se pasan al componente mediante render() a través de this.props
+	 
+Un componente con estado
+	Además de obtener datos de entrada (a los que accedes a través de this.props), un componente puede tener datos en su estado interno (a los que accedes a través de this.state). Cuando los datos del estado de un componente cambian, se vuelve a invocar render con los nuevos valores en this.state
+	
+Una aplicación
+	Usando props y state, podemos integrar todo 

@@ -1,0 +1,140 @@
+Componente de react-redux usado para envolver toda la aplicación redux:
+XXX CONNECT
+PROVIDER
+
+¿Cuál es el método de Redux para crear el store?
+CreateStore
+
+¿Qué son las acciones?
+XXX Son un bloque de Informacion que actualiza es estado
+son un bloque de informacion que envia datos desde la aplicacion hacia el store
+
+	Las acciones son un bloque de información que envia datos desde tu aplicación a tu store. Son la única fuente de información para el store. Las envias al store usando store.dispatch().
+
+El Store es:
+El centro de la verdad de todo
+
+¿Cuáles son los parámetros de createStore?
+XXX	initial State, enhancer, funtion
+XXX Reductores, estado inicial, estado final
+	reducer, preload state, enhancer
+	reducer, map(), composeWithDevTools(
+
+¿Con qué método de immutable.js se pueden obtener datos del estado?
+get
+
+¿Qué datos recibe mapStateToProps?
+state, props
+
+¿Cuál de las siguientes oraciones sobre Redux es correcta?
+Se puede usar solo o con cualquier libreria o Framework JS
+
+Es un parámetro requerido en una acción:
+XXX payload
+TYPE
+	addTodoWithDispatch
+	dispatch(addTodo(text))
+	dispatch(completeTodo(index))
+
+¿Cómo llamamos por convención a la segunda función que recibe connect?
+mapDispatchToProps
+
+Método del store para enviar acciones a los reducers:
+dispatch
+
+Método de react-redux para usar el estado en componentes de React:
+XXX getState
+connect	
+
+	
+
+¿Qué dato recibe la función mapDispatchToProps?
+dispatch
+
+¿Cuál no es un principio de Redux?
+UI
+XXX los cambios se realizan en funciones puras
+XXX estado de solo lectura
+	Tres Principios
+		Única fuente de la verdad
+		El estado es de solo lectura
+		Los cambios se realizan con funciones puras
+
+Las acciones:
+se envian usando el metodo dispatch
+
+¿Con qué librería hacemos el reducer immutable?
+redux-immutable
+
+¿Qué parámetros recibe bindActionCreators?
+action-dispatch
+
+¿Qué hace el método dispatch del store?
+Despacha una acción. Esta es la única forma de realizar un cambio de estado.
+XXX muta el estado	
+XXX envia cambios al Store
+Manda acciones a lo reducers
+	`
+	El store contiene todo el árbol de estado de tu aplicación. La única forma de cambiar el estado que contiene es despachando una acción.
+	El store no es una clase. Es solo un objeto con unos pócos métodos. Para crearlo, pasa tu principal función reductora a createStore.
+	
+	Métodos del Store(#metodos-store)
+	getState()
+	dispatch(action)Las accion
+	subscribe(listener)
+	replaceReducer(nextReducer)
+
+
+
+Los reducers:
+Cambian el estado de la aplicacion
+
+Método del store para obtener el estado de la aplicación:
+getState
+
+Con qué dependencia podemos manejar acciones asíncronas?
+Redux-thunk
+
+¿Cómo evitamos escribir toda la acción y reutilizarla?
+XXX Action-Types
+Action-Creator
+
+¿Cual es la función del reducer?
+Actualizar el estado
+El reducer es una función pura que toma el estado anterior y una acción, y devuelve en nuevo estado
+
+¿Cómo juntamos los creadores de acciones con las propiedades del componente?
+BindActionCreators
+
+Librería para utilizar redux en una aplicación react:
+react-redux
+
+¿Qué parámetros recibe un reducer?
+state, action
+
+¿Con qué evitamos repetir los strings de cada acción como ‘ADD_SONG’?
+Action-Creatros
+
+¿Con qué método del store podemos ejecutar una función al momento de actualizar el estado?
+--- https://es.redux.js.org/docs/api/Store.html
+XXX getState
+XXX render()
+XXXX dispatch(action)
+
+	constructor(props)
+	componentWillMount()	
+	componentWillReceiveProps(nextProps)
+
+¿Cuál de los siguientes es un método del store?
+--- https://es.redux.js.org/docs/api/Store.html
+XXX reduce
+XXX GETStore
+
+	Métodos del Store(#metodos-store)
+	getState()
+	dispatch(action)
+	subscribe(listener)
+	replaceReducer(nextReducer)
+
+¿Cómo llamamos por convención a la primer función que recibe connect?
+mapStateToProps

@@ -16,6 +16,14 @@ HTML+CSS+JS,
 
 https://facebook.github.io/react-native/
 https://reactnavigation.org/docs/en/auth-flow.html
+http://www.reactnative.com/uiexplorer/		EJEMPLOS
+https://github.com/LeonidasEsteban/platzi-video-react-navigation
+https://github.com/LeonidasEsteban/platzi-video-react-navigation/tree/master/src/screens/containers
+https://facebook.github.io/react-native/docs/signed-apk-android#docsNav
+https://yts.am/api#movie_suggestions
+https://facebook.github.io/react-native/docs/components-and-apis.html#basic-components
+https://flutter-es.io/
+http://www.reactnative.com/uiexplorer/
 
 https://github.com/juandc
 https://github.com/juandc/PlatziMusic
@@ -272,6 +280,19 @@ https://www.npmjs.com/package/react-intl-v2
 https://github.com/AlexanderZaytsev/react-native-i18n
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Volver a generar carpeta IOS / ANDROID 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+El proceso que debe seguir es tan similar a cambiar el nombre de una aplicación nativa reaccionar. Básicamente, solo necesita ejecutar react-native upgrade en su directorio de proyecto raíz. Para obtener más información, puede consultar otra pregunta here. Las instrucciones a continuación explican cómo crear otro proyecto nativo de reacción basado en uno copiado con un nombre nuevo.
+
+Primero copie el directorio que tiene su aplicación to-be-name-changed. Y vaya a su directorio recientemente clonado.
+Cambie el nombre en el archivo index.ios/android.js que se proporciona como un parámetro para AppRegistry.
+cambiar el nombre y la versión en consecuencia package.json
+Eliminar /ios y /android carpetas que están restante de su aplicación más.
+Ejecute $react-native upgrade para generar /ios y /android carpetas de nuevo.
+Ejecute $react-native link para cualquier dependencia nativa.
+Finalmente ejecuta $react-native run-ios o lo que quieras.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 VIDEO
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://platzi.com/clases/1292-react-native/11698-controlando-el-buffer-del-video/
@@ -369,3 +390,186 @@ export default class App extends Component<Props> {
     );
   }
 }
+
+Con qué comando creas una aplicación con el cliente de react-native				
+		npm install -g create-react-native-app 
+		$ create-react-native-app my-app 
+		$ cd my-app/ 
+		$ npm start
+		??react-native init
+
+Como se recarga la aplicación en el emulador de iOS
+		command + r
+
+Con cual de estos componentes podemos crear listas en React Native
+		FlatList
+
+En qué propiedad de react-native-video <Video /> podemos configurar si el video está o no en reproducción
+		paused
+
+
+Con qué propiedad de FlatList asignas el componente utilizado como elemento de la lista
+		renderItem
+
+Con qué componente podemos agregar un website dentro de una app en React Native
+		WebView
+
+Con qué comando de react-native podemos enlazar alguna dependencia extra que querramos instalar
+		link
+
+Qué propiedad de FlatList crea listas horizontales
+		horizontal
+
+¿Qué API nos expone componentes y funciones para realizar animaciones en React Native?
+		Animated
+
+Qué componente de React Native nos da soporte al notch (iphone X)
+		SafeAreaView
+
+Con qué comando creas una aplicación con el cliente de react-native
+		react-native run-android
+
+Con qué comando puedes ver la versión de react-native y react-native-cli
+		react-native --version /-v
+
+Componente que asemeja el uso de divs de HTML en React-Native
+		<View />
+
+Componente usado para manejar textos en react native
+		<Text />
+
+Con qué conjunto de teclas se recarga la aplicación en el emulador de android
+		??doble tap en r
+
+		r + r
+		ctrl + m / r
+
+¿En qué key debo agregar la ruta de una imagen que venga por internet dentro de la propiedad source en el componente Image?
+		URI
+		
+En que propiedad de react-native-video <Video /> podemos asignar la ruta del video
+		source
+
+Componente usado para manejar textos en react native
+		TEXT
+		
+Que propiedad de <PersistGate /> nos ayuda a poner un componente mientras los datos son persistidos		
+		??loading={<div />}
+
+¿Qué componente expone redux-persist para persistir datos?		
+		??persisGate
+		
+Con qué propiedad de FlatList puedes asignar un estado de “vacío”
+		ListEmptyComponent
+		
+Con qué comando puedes ver la versión de react-native y react-native-cli
+		react-native-v
+		
+Con que comando sacamos el menú de desarrollo en Android
+		control o commant m
+
+Con que modulo de React Native podemos validar código para las diferentes plataformas
+		platfomr
+		
+Con qué propiedad de FlatList podemos asignar un key custom con los datos de cada elemento de la lista
+		keyExtractor
+		
+Con que comando sacamos el menú de desarrollo en iOS
+		command control z
+
+Con que dependencia que acompaña a Redux podemos guardar los datos en “cache” para consumirlos luego hasta cuando no tengamos internet
+		redux-persist
+
+¿Qué componente expone react-redux para distribuir el store?		
+		??provider
+	
+		
+		
+		
+		
+
+		
+NAVIGATION
+
+Dentro del navigation prop ¿cuál sería la opción correcta si quiero enviar una acción?
+dispatch
+
+Dentro del navigation prop ¿cuál sería la opción correcta *si quiero navegar a la pantalla anterior?
+		goBack
+
+Dentro del navigation prop ¿cuál sería la opción correcta si quiero escuchar el evento “didFocus”?
+		addListener
+
+Si quiero hacer una navegación por ventanas emergentes (modal) ¿cuál sería el navigator más adecuado?
+		createStackNavigator
+		
+
+Un DrawerNavigator tiene una configuración para personalizar su ancho ¿cuál es?
+		drawerWidth
+
+Hay un componente en React Native que nos ayuda a crear elemento presionables con la UI adecuada para iOS y Android ¿Cuál es?
+		Button
+
+A veces nuestro proyecto por alguna razón muestra una pantalla roja y uno de los consejos más relevantes es prender el servidor de desarrollo nuevamente limpiando cache, ¿que bandera nos ayuda a borrar cache en React Native?
+reset-cache
+
+
+Si quiero hacer una navegación por un menú lateral ¿cuál sería el navigator más adecuado?
+createDrawerNavigator
+
+¿En qué configuración de un DrawerNavigator podemos personalizar todo el menú lateral por un componente propio?
+contentComponent
+
+¿En qué configuración de un StackNavigator dentro del navigationOptions podemos definir un componente para personalizar el header?
+header
+
+Si tengo una navigator de tipo Stack dentro de qué configuración podré configurar la propiedad title para personalizar el header
+navigationOptions
+
+En un TabNavigator ¿cómo podemos personalizar el ícono de cada tab?
+tabBarIcon
+
+Si quiero hacer una navegación por tabs ¿cuál sería el navigator más adecuado?
+createBottomTabNavigator
+
+Dentro del navigation prop ¿cuál sería la opción correcta si quiero entrar a otra pantalla?
+navigate
+
+¿Cómo podemos obtener una acción personalizada para navigate dentro de librería react-navigation?
+NavigationActions
+
+¿Cómo podemos hacer una acción para hacer push o pop en React Navigation?
+StackActions
+
+¿Qué propiedad de los navigators se puede manipular desde cada screen?
+navigationOptions
+
+Un DrawerNavigator tiene una configuración para personalizar su color de fondo ¿cuál es?
+		XXX drawerBackgroundColor
+		xxx drawerWidth
+		XXX 20-01 contentOptions
+
+Dentro del navigation prop ¿cuál sería la opción correcta si quiero obtener un dato que venga de otra pantalla?
+getPram
+
+En un DrawerNavigator ¿cómo podemos personalizar el ícono de cada tab?
+		XXX style
+		XXX TabBarIco
+		20-01 drawerIcon
+
+A veces vamos a querer usar el navigation prop pero en un componente que no lo reciba nativamente (una pantalla), ¿Cuál sería el decorador de React Navigation que nos ayudaría a resolver esta necesidad?
+		whithNavigation
+
+¿Cuál sería el componente de React Native más adecuado para manipular los colores de la barra superior que ves en Android y iOS?
+		XXX  statusBar
+		XXX  SafeAreaView
+		XXX  20-01 VIEW
+
+Si estoy haciendo un flujo de login ¿cuál sería el navigator más adecuado?
+createSwitchNavigator
+
+¿Cuál sería el parámetro indispensable en la función navigate de los NavigationActions?		
+		ROUTENAME
+		
+¿En qué configuración de un StackNavigator podemos decidir si queremos una navegación por card o modal?
+		mode

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders a snapshot 1`] = `
+<div
+  className="App"
+>
+  <h1
+    id="title"
+    onClick={[Function]}
+  >
+    Hello, Paraguay!
+  </h1>
+</div>
+`;
