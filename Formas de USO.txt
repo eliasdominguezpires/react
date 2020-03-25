@@ -93,3 +93,8 @@ npm install --save react-markdown
 https://zeit.co/docs/v2/deployments/official-builders/next-js-now-next
 https://zeit.co/now
 https://nextjs.org/learn/excel/static-html-export
+
+
+-----------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------

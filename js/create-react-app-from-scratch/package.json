@@ -1,0 +1,11 @@
+{
+  "name": "create-react-app-from-scratch",
+  "version": "1.0.0",
+  "description": "a project is created from 0",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "elias.dominguezpires",
+  "license": "ISC"
+}
