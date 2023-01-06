@@ -8,18 +8,17 @@
 .navigation-bar-background {
     height: 88px;
     width: 375px;
+    justify-content: center;
 }
 
 .title-header {
-    height: 22px;
-    width: 121px;
     color: #000000;
     font-family: "SF Pro Text";
-    font-size: 17px;
+    font-size: 27px;
     font-weight: 600;
-    letter-spacing: -0.41px;
     line-height: 22px;
     text-align: center;
+    align-content: center;
 }
 
 .mask {
