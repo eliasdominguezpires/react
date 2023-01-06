@@ -10,12 +10,12 @@ function App() {
   const { isLoading, superHeroes } = useSuperheroes();
   console.log(JSON.stringify(superHeroes, null, 5));
 
-  const handleClick = (e : SuperheroInterface) => {
+  const handleClick = (e: SuperheroInterface) => {
     console.log(JSON.stringify(e, null, 5));
     showNotification(e.name);
   }
 
-  const showNotification = (name : string) => {
+  const showNotification = (name: string) => {
     Notification.requestPermission();
     new Notification(name);
   }

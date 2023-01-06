@@ -1,21 +1,21 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import baseApi from "../apis/baseApi";
 import { SuperheroInterface } from '../interfaces/superheroInterface';
 import data from '../data/api.json';
 
 
-export const useSuperheroes = () =>{
-    
+export const useSuperheroes = () => {
+
     const [isLoading, setIsLoading] = useState(true);
     const [superHeroes, setSuperHeroes] = useState<SuperheroInterface[]>([]);
 
     useEffect(() => {
-      getSuperhero();
+        getSuperhero();
     }, []);
 
-    useEffect(() => {
-        getSuperhero();
-      }, []);
+    /*useEffect(() => {
+        getSuperheroJSON();
+    }, []);*/
 
     const getSuperhero = async () => {
         const resp = await baseApi.get<SuperheroInterface[]>('/all.json');
@@ -29,8 +29,8 @@ export const useSuperheroes = () =>{
         setSuperHeroes(data);
         setIsLoading(false);
     }
-    
-    return{
+
+    return {
         isLoading,
         superHeroes
     }
